@@ -1,0 +1,14 @@
+{
+  "description": "Say hello to a given name",
+  "x-api-gateway": {
+    "method": "get",
+    "path": "/hello/{name}",
+    "parameters":[{
+      "name": "name",
+      "in": "path",
+      "description": "Name of the person we want to say hello",
+      "required": true,
+      "type": "string"
+    }]
+  }
+}
