@@ -1,7 +1,7 @@
 import lambdaTester from 'lambda-tester';
 import { expect } from 'chai';
 
-import hello from '../functions/hello/src';
+import hello from '../src';
 
 describe('Hello function', () => {
   it('should say hello to a given name', () => {
@@ -9,7 +9,7 @@ describe('Hello function', () => {
 
     return lambdaTester(hello)
       .event({ pathParams: { name } })
-      .expectSucceed(result => {
+      .expectSucceed((result) => {
         expect(result).to.equal(`Hello ${name}`);
       });
   });

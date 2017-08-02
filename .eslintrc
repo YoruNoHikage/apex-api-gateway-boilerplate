@@ -1,4 +1,15 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb-base"
+  "extends": "airbnb-base",
+  "overrides": [
+    {
+      "files": ["functions/*/test/**"],
+      "env": { "mocha": true },
+      "plugins": ["mocha"],
+      "rules": {
+        "mocha/no-exclusive-tests": "error",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      }
+    }
+  ]
 }
